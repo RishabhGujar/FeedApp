@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: oldlace;
+  font-family: monospace;
+  font-size: medium;
+  font-weight: bolder;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sorting {
+  border-radius: 3px;
+  padding: 1px 1px 1px 1px;
+  background-color: cornflowerblue;
+  margin-top: 10vh;
+  margin-bottom: 3vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+}
+.some {
+  height: 400px;
+  width: 400px;
+}
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: 20px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 20px; /* gutter size */
+  background-clip: padding-box;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 20px;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
+.pagination a {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #6c7ac9;
+  color: #6c7ac9;
+}
+
+.pagination__link {
+  font-weight: bold;
+}
+
+.pagination__link--active a {
+  color: #fff;
+  background: #6c7ac9;
+}
+
+.pagination__link--disabled a {
+  color: rgb(198, 197, 202);
+  border: 1px solid rgb(198, 197, 202);
+}
+.error {
+  background: url("http://spittoon.co.uk/wp-content/uploads/2019/01/error-meme-400x300.jpg");
+  background-size: auto;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bottomStyles {
+  text-align: center;
+  background-color: cornflowerblue;
+  border-radius: 5px;
+  border: 2px solid cornflowerblue;
+  padding: 1px 1px 1px 1px;
+}
+.btn {
+  padding: 0 0 0 0;
+  border-radius: 3px;
+  box-shadow: rgba(243, 243, 243, 0.25) 0px 50px 100px -20px,
+    rgba(246, 246, 248, 0.3) 0px 30px 60px -30px,
+    rgba(231, 233, 235, 0.35) 0px -2px 6px 0px inset;
+}
+
+.shareContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1vh;
+}
+
+.centerLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid rgb(7, 7, 7);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(14, 13, 13) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
